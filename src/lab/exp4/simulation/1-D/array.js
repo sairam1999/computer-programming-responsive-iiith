@@ -51,6 +51,8 @@ window.view = {
 		this.addClickEvent('btnOk', function() { view.proceedToStartButton() })
 		this.addClickEvent('btnStart', function() { view.displayElements() })
 		this.addClickEvent('btnNext', function() { view.sortArray() })
+		this.addClickEvent('btnRandom',function() { view.ToDisableTextBox()})
+		this.addClickEvent('btnManual',function() { view.ToEnableTextBox()})
 	},
 	proceedToStartButton: function() {
 		var userInput = this.getArraySize()
@@ -264,6 +266,12 @@ window.view = {
 		}
 		else
 			this.highlightNextStep()
+	},
+	ToDisableTextBox: function(){
+		document.getElementById("userInput").disabled = true;
+	},
+	ToEnableTextBox: function(){
+		document.getElementById("userInput").disabled = false;
 	},
 	init: function() {
 		this.activateEvents()
